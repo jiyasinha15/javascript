@@ -146,10 +146,13 @@
 
 // Form Submit Event Example
 
-const handleSubmit = (event) => {
-    event.preventDefault();          // Prevents the default form submission behavior 
-    console.log("Form Submitted")
+// const handleSubmit = (event) => {
+//     event.preventDefault();          // Prevents the default form submission behavior 
+//     console.log("Form Submitted")
 
-}
-const form = document.querySelector('form');
-form.addEventListener('submit', handleSubmit)
+// }
+// const form = document.querySelector('form');
+// form.addEventListener('submit', handleSubmit)
+
+
+console.log("updated code")
