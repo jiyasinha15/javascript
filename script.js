@@ -166,10 +166,94 @@
 // div.addEventListener('click', function(){console.log("Div Clicked")})
   
 
-const btn = document.querySelector("button")
-const div = document.querySelector(".container")
-const div2 = document.querySelector(".outer")
+// const btn = document.querySelector("button")
+// const div = document.querySelector(".container")
+// const div2 = document.querySelector(".outer")
 
-btn.addEventListener('click', function(){console.log("Button Clicked")}, false)
-div.addEventListener('click', function(){console.log("Div Clicked")}, false)
-div2.addEventListener('click', function(){console.log("Div2 Clicked")}, false)
+// btn.addEventListener('click', function(){console.log("Button Clicked")}, false)
+// div.addEventListener('click', function(){console.log("Div Clicked")}, false)
+// div2.addEventListener('click', function(){console.log("Div2 Clicked")}, false)
+
+
+// debugger
+// console.log(a)
+
+// var a=78  //part of global scope
+// let b=90  //part of script scope
+// console.log(a)
+// console.log(b)
+
+// function print(){
+//     let c=45
+//     console.log(c)
+//     console.log("Inside Function")
+// }
+// print()
+
+
+// debugger
+// function first(){
+//     second()
+// }
+// function second(){
+//     third()
+// }
+// function third(){
+//     console.trace()
+// }
+// first()
+
+// let total=100
+// function calculate()
+
+
+// Asynchronous Example
+
+// console.log("First Line")
+// setTimeout(() => {
+//     console.log("After 2 seconds")
+// }, 2000)
+// console.log("Second Line")
+
+
+// setTimeout Example with Alert
+
+// setTimeout(() => {
+//     alert("This alert is shown after 3 seconds")
+// }, 3*1000)
+
+
+//  setInterval Example
+
+// const timerId=setInterval(() => {
+//     console.log("Hello Student!")
+// }, 1000)
+
+// setTimeout(() => {
+//     clearInterval(timerId) 
+// }, 10*1000)   // Clears the interval after 10 seconds
+
+
+// Example: Countdown Timer
+
+// let count = 1;
+
+// const id=setInterval(() => {
+//     if(count===10)clearInterval(id)
+//     console.log(count)
+//     count+=1
+// }, 1000)
+
+
+// console.log("First Line")
+// setTimeout(() => {
+//     console.log("After 2 seconds")
+// }, 0)
+// console.log("Second Line")
+
+
+
+const id=setTimeout(() => {
+    console.log("After 2 seconds")
+}, 2000)
+clearTimeout(id)
