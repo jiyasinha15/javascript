@@ -337,26 +337,69 @@
 
 // 2nd method Callback Hell Example
 
-function finishHomework(callback){
-    console.log("Starting Homework...");
-    setTimeout(() => {
-        console.log("Homework done!");
-        callback();
-    }, 2000);
-}
-function eatDinner(callback){
-    console.log("Starting Dinner...");
-    setTimeout(() => {
-        console.log("Dinner done!");
-        callback();
-    }, 1500);
-}
-function goPlayground(){
-    console.log("Going to the playground!");
-}
+// function finishHomework(callback){
+//     console.log("Starting Homework...");
+//     setTimeout(() => {
+//         console.log("Homework done!");
+//         callback();
+//     }, 2000);
+// }
+// function eatDinner(callback){
+//     console.log("Starting Dinner...");
+//     setTimeout(() => {
+//         console.log("Dinner done!");
+//         callback();
+//     }, 1500);
+// }
+// function goPlayground(){
+//     console.log("Going to the playground!");
+// }
 
-finishHomework(() => {
-    eatDinner(() => {
-        goPlayground()
-    });
-});
+// finishHomework(() => {
+//     eatDinner(() => {
+//         goPlayground()
+//     });
+// });
+
+
+// Adding Classes on Button Click
+
+// const input = document.querySelector('#task')
+// const btn = document.querySelector('.btn')
+// const lists = document.querySelector('.list')
+// btn.addEventListener('click',(e)=>{
+//     e.preventDefault()
+//     const li = document.createElement('li')
+//     li.innerText = input.value
+//     lists.appendChild(li)
+//     input.value = ""
+// })
+
+
+// Removing Classes on Button Click
+
+const input = document.querySelector('#task')
+const btn = document.querySelector('.btn')
+const lists = document.querySelector('.list')
+btn.addEventListener('click',(e)=>{
+    e.preventDefault()
+    if (input.value===""){
+        alert("Please enter a task")
+        return
+    }
+
+    const li = document.createElement('li')
+    const deleteBtn = document.createElement('button')
+
+    deleteBtn.innerText = "Delete"
+    li.innerText = input.value 
+    
+    li.appendChild(deleteBtn)
+    lists.appendChild(li)
+
+    deleteBtn.addEventListener('click',()=>{
+        lists.removeChild(li)
+    })
+
+    input.value = ""
+})
