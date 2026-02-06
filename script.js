@@ -378,28 +378,198 @@
 
 // Removing Classes on Button Click
 
-const input = document.querySelector('#task')
-const btn = document.querySelector('.btn')
-const lists = document.querySelector('.list')
-btn.addEventListener('click',(e)=>{
-    e.preventDefault()
-    if (input.value===""){
-        alert("Please enter a task")
-        return
-    }
+// const input = document.querySelector('#task')
+// const btn = document.querySelector('.btn')
+// const lists = document.querySelector('.list')
+// btn.addEventListener('click',(e)=>{
+//     e.preventDefault()
+//     if (input.value===""){
+//         alert("Please enter a task")
+//         return
+//     }
 
-    const li = document.createElement('li')
-    const deleteBtn = document.createElement('button')
+//     const li = document.createElement('li')
+//     const deleteBtn = document.createElement('button')
 
-    deleteBtn.innerText = "Delete"
-    li.innerText = input.value 
+//     deleteBtn.innerText = "Delete"
+//     li.innerText = input.value 
     
-    li.appendChild(deleteBtn)
-    lists.appendChild(li)
+//     li.appendChild(deleteBtn)
+//     lists.appendChild(li)
 
-    deleteBtn.addEventListener('click',()=>{
-        lists.removeChild(li)
-    })
+//     deleteBtn.addEventListener('click',()=>{
+//         lists.removeChild(li)
+//     })
 
-    input.value = ""
-})
+//     input.value = ""
+// })
+
+
+// PROMISES
+
+// for rejected promise
+
+// const p = new Promise(function(resolve, reject){
+//     reject()
+// })
+// console.log(p)
+
+
+//for resolved promise
+
+// const p = new Promise(function(resolve, reject){
+//     resolve()
+// })
+// console.log(p)
+
+
+// for resolved promise after some time
+
+// const p = new Promise(function(resolve, reject){
+//     setTimeout(() => {
+//         console.log("promise is resolved")
+//         resolve()
+//     }, 2000);
+// })
+// console.log(p)
+
+
+// if else condition in promise
+
+// const p = new Promise(function(resolve, reject){
+//     setTimeout(() => {
+//         let done=true;
+//         if(done){
+//             resolve()
+//         }else{
+//             reject()
+//         }
+//     }, 5000);
+       
+// })
+// console.log(p)
+
+
+// then and catch method
+
+// const p = new Promise(function(resolve, reject){
+//     setTimeout(() => {
+//         let done=true;
+//         if(done){
+//             resolve()
+//         }else{
+//             reject()
+//         }
+//     }, 5000);
+       
+// })
+// p.then(()=>{
+//     console.log("Promise is resolved")
+// }).catch(()=>{
+//     console.log("Promise is rejected")
+// })  
+
+
+// if done=true in data
+
+// const p = new Promise(function(resolve, reject){
+//     setTimeout(() => {
+//         let done=true;
+//         if(done){
+//             resolve({name: "Jiya", age: 18})
+//         }else{
+//             reject("Try after sometime")
+//         }
+//     }, 5000);
+       
+// })
+// p.then((data)=>{
+//     console.log("Promise is resolved", data)
+// }).catch((err)=>{
+//     console.log("Promise is rejected", err)
+// })  
+
+
+// if done=false in data
+
+// const p = new Promise(function(resolve, reject){
+//     setTimeout(() => {
+//         let done=false;
+//         if(done){
+//             resolve({name: "Jiya", age: 18})
+//         }else{
+//             reject("Try after sometime")
+//         }
+//     }, 5000);
+       
+// })
+// p.then((data)=>{
+//     console.log("Promise is resolved", data)
+// }).catch((err)=>{
+//     console.log("Promise is rejected", err)
+// }).finally(()=>{
+//     console.log("Finally block")
+// })
+
+
+
+function doHomework(){
+    const p = new Promise(function(resolve, reject){
+        setTimeout(() => {
+            let done=true;
+            if(done){
+                console.log("Homework is done")
+                resolve("Homework complete")
+            }else{
+                reject("Homework not done")
+            }
+        }, 5000);
+    });
+    return p
+}
+
+
+function haveDinner(){
+    const p = new Promise(function(resolve, reject){
+        setTimeout(() => {
+            let done=true;
+            if(done){
+                console.log("Dinner is done");
+                resolve("Dinner complete")
+            }else{
+                reject("Dinner not done")
+            }
+        }, 5000);
+    });
+    return p
+}
+
+
+function goPlayground(){
+    const p = new Promise(function(resolve, reject){
+        setTimeout(() => {
+            let done=true;  
+            if(done){
+                console.log("Going to the playground");
+                resolve("Way to the playground")
+            }else{
+                reject("Couldn't go to the playground");
+            }
+        }, 5000);
+    });
+    return p
+}
+
+doHomework().then((data)=>{
+    console.log(data);
+    return haveDinner();
+}).then((data)=>{
+    console.log(data);
+    return goPlayground();
+}).then((data)=>{
+    console.log(data);
+}).catch((err)=>{
+    console.log(err);
+}).finally(()=>{
+    console.log("All tasks are completed")
+});
