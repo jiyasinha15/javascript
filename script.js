@@ -837,18 +837,21 @@
 //     return a+b+c
 // }
 
-function add(a){
-    return function(b){
-        return function(c){
-            return a+b+c
-        }
-    }
-}
+// function add(a){
+//     return function(b){
+//         return function(c){
+//             return a+b+c
+//         }
+//     }
+// }
 // console.log(add(1)(2)(3))
 
-const first = add(1)
-const second = first(2)
-const third = second(3)
-// console.log(third)
-// console.log(second)
-console.log(first)
+// const first = add(1)
+// const second = first(2)
+// const third = second(3)
+// // console.log(third)
+// // console.log(second)
+// console.log(first)
+
+
+//       CH-3 INTRODUCTION TO REACT
