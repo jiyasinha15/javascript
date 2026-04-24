@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import {add,subtract} from './utility'
+// import {add,subtract} from './utility'
 import Sample from './component/Sample'
 import HomePage from './component/HomePage'
 

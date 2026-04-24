@@ -1,29 +1,60 @@
-import React,{Component, useState, useEffect} from 'react'
+
+import React,{Component, useState, useEffect, useRef} from 'react'
 import style from '../css/Sample.module.css'
 import style1 from '../css/HomePage.module.css'
 // import styled from 'styled-components'
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
+import axios from 'axios'
 
 function Sample(props) {
-    const [name,setName]=useState("Jiya")
-    const [age,setAge]=useState(18)
+    const [name,setName]=useState("Devendra")
+    const [age,setAge]=useState(20)
+    const [loading, setLoading] = useState(false)
 
     useEffect(()=>{
-        console.log("Component Mounted")
-        return()=>{
-            console.log("Component Unmounted")
+        
+        console.log("Component mounted")
+        return ()=>{
+            console.log("Component unmounted")
         }
     },[name])
 
+    useEffect(()=>{
+        // async function fetchingData(){
+        //     const response=await fetch("https://dummyjson.com/products",{
+        //         method:"GET"
+        //     })
+        //     const data=await response.json()
+        //     console.log(data)
+        // }
+
+        async function fetchingData(){
+            try{
+                setLoading(true)
+                const response=await axios.get("https://dummyjson.com/products/")
+            console.log(response.data)
+            setLoading(false)
+            }catch(error){
+                console.log(error)
+            }
+            }
+        
+        fetchingData()
+
+        input
+        },[])
+    
+
   return (
     <div>
+        {loading?<h1>Loading...</h1>:<h1></h1>}
       <h2>Trending topics</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quae maiores, nobis laboriosam non commodi quia consequuntur vitae dolore facere deserunt quas recusandae iste harum in, provident aut reprehenderit temporibus.</p>
       <h3>{name}</h3>
         <button onClick={()=>{
             setName("Alex")
-            setAge(18)
+            
         }}>Name Change</button>
     <button
         className="counter"
@@ -32,7 +63,7 @@ function Sample(props) {
         Count is {props.count}
     </button>
     <div>
-        <Button >First</Button>
+        <Button>First</Button>
         <Button green>Second</Button>
         <button css={buttonStyle}>Third</button>
         <button className='bg-red-500 text-white w-20 h-8'>Fourth</button>
