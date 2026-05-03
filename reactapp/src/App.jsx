@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import { useState } from 'react'
 import './App.css'
-// import {add,subtract} from './utility'
 import Sample from './component/Sample'
 import HomePage from './component/HomePage'
+import Contact from './component/Contact'
+import { Route, Routes } from 'react-router-dom'
 
 
 function App() {
@@ -14,8 +12,11 @@ function App() {
 
   return (
     <>
-      <Sample count={count} setCount={setCount}/>
-      <HomePage/>
+
+      <Routes>
+        <Route path='/' element={<><HomePage/><Sample/></>}/>
+        <Route path='/contact' element={<Contact/>}/>
+      </Routes>
     </>
   )
 }
