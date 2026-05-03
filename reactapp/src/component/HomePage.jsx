@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import Profile from './Profile'
 
-function HomePage({name}) {
+function HomePage() {
     const [login, setLogin] = useState(false)
 //   if(login){
 //     return<><button onClick={()=>setLogin(false)}>Logout</button></>
@@ -19,7 +19,7 @@ function HomePage({name}) {
       <li><Link to="/contact">Contact</Link></li>
       <li><NavLink to="/contact" style={({isActive})=>({color:isActive?"red":"blue"})}>Contact</NavLink></li>
     </ul>
-      <Profile name={name} />
+      <Profile />
     </>
   )
 }
